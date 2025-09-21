@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../screens/main_screen.dart';
 
 /// 应用级导航服务，用于纯 PageView 导航方案
 class AppNavigationService {

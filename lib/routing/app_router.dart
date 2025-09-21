@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../ui/search/widgets/search_screen.dart';
-import '../ui/settings/widgets/settings_screen.dart';
+import '../ui/profile/widgets/settings_screen.dart';
 import '../../ui/core/screens/main_screen.dart';
 import '../../ui/login/widgets/login_screen.dart';
 import 'package:float_note/ui/record/widgets/record_screen.dart';
