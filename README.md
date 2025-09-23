@@ -16,9 +16,11 @@
 
 以下是应用的截图预览：
 
-<img src="screenshots/image0.png" width="300" alt="Float Note 截图1">
-<img src="screenshots/image1.png" width="300" alt="Float Note 截图2">
-<img src="screenshots/image2.png" width="300" alt="Float Note 截图3">
+<div style="display: flex; gap: 10px; overflow-x: auto; padding: 10px 0;">
+  <img src="screenshots/image0.png" width="300" alt="Float Note 截图1">
+  <img src="screenshots/image1.png" width="300" alt="Float Note 截图2">
+  <img src="screenshots/image2.png" width="300" alt="Float Note 截图3">
+</div>
 
 ## 技术栈
 
