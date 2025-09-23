@@ -34,13 +34,14 @@ class FinancialRecordWidget extends ConsumerWidget {
       contentSection: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          SizedBox(height: 6),
           Wrap(
             spacing: 4,
             crossAxisAlignment: WrapCrossAlignment.center,
             children: [
               Icon(
                 Icons.money,
-                size: 14,
+                size: 18,
               ),
               Text(transactionType, style: TextStyle(fontSize: 14)),
               Text(amount, style: TextStyle(fontSize: 14)),
@@ -80,14 +81,14 @@ class FinancialRecordWidget extends ConsumerWidget {
           Padding(
             padding: const EdgeInsets.only(top: 6, right: 14),
             child: Row(
-               crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Icon(
+                Padding(padding: EdgeInsets.only(top: 2), child: Icon(
                     Icons.more,
                     size: 14,
-                  ),
-                
+                  ),),
+                SizedBox(width: 4),
                 Expanded(
                   child: Wrap(
                     children: [

@@ -1,6 +1,6 @@
 # Float Note
 
-一个 Flutter 笔记应用，支持语音记录、搜索和本地通知提醒功能。
+一个Flutter 笔记应用，支持语音记录、搜索和本地通知提醒功能。
 
 ## 功能特点
 
@@ -11,6 +11,14 @@
 - 🌓 **主题切换**：支持明暗主题
 - 🌐 **国际化**：支持中英文切换
 - 🔐 **用户认证**：安全的用户登录系统
+
+## 应用预览
+
+以下是应用的截图预览：
+
+<img src="screenshots/image0.png" width="300" alt="Float Note 截图1">
+<img src="screenshots/image1.png" width="300" alt="Float Note 截图2">
+<img src="screenshots/image2.png" width="300" alt="Float Note 截图3">
 
 ## 技术栈
 
@@ -68,7 +76,7 @@ lib/
 1. 克隆仓库
 
 ```bash
-git clone https://github.com/shengteng9/float_note.git
+git clone https://github.com/yourusername/float_note.git
 cd float_note
 ```
 
@@ -164,7 +172,7 @@ flutter build web
 如有问题或建议，请联系项目维护者：
 
 - 邮箱：zhatengfei@gmail.com
-- GitHub：[https://github.com/shengteng9/float_note.git](https://github.com/shengteng9/float_note.git)
+- GitHub：[https://github.com/shengteng9/float_note](https://github.com/shengteng9/float_note)
 
 ## License
 
@@ -174,6 +182,4 @@ flutter build web
 
 *Float Note - 让记录变得简单而高效*
 
-A new Flutter project.
 
-## Getting Started

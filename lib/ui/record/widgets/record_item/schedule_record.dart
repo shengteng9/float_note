@@ -167,7 +167,7 @@ class ScheduleRecordWidget extends ConsumerWidget {
                 children: [
                   Icon(
                     Icons.schedule,
-                    size: 14,
+                    size: 18,
                     color: Theme.of(context).colorScheme.primary,
                   ),
                   SizedBox(width: 6),
