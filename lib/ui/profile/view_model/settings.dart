@@ -2,27 +2,33 @@ import 'package:flutter/material.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../data/services/settings_service.dart';
+import '../../core/services/notification_service.dart';
 
 part 'settings.g.dart';
 
 class Setting {
   final String systemLanguage;
+  final int pendingNotificationCount;
 
   const Setting({
     this.systemLanguage = 'en',
+    this.pendingNotificationCount = 0,
   });
 
   Setting copyWith({
     String? systemLanguage,
+    int? pendingNotificationCount,
   }) {
     return Setting(
       systemLanguage: systemLanguage ?? this.systemLanguage,
+      pendingNotificationCount: pendingNotificationCount ?? this.pendingNotificationCount,
     );
   }
 }
 
 @riverpod
 class SettingNotifier extends _$SettingNotifier {
+  final NotificationService _notificationService = NotificationService();
   
   SettingNotifier();
 
@@ -30,8 +36,23 @@ class SettingNotifier extends _$SettingNotifier {
   AsyncValue<Setting> build() {
     final systemLocale = WidgetsBinding.instance.platformDispatcher.locale;
     final systemLanguage = systemLocale.languageCode;
+    
+    // 初始化时获取当前未处理通知数量
+    final pendingNotificationCount = _notificationService.getPendingNotificationCount();
+    
+    // 注册监听器，监听未处理通知数量变化
+    _notificationService.addNotificationCountListener(_onNotificationCountChanged);
+    
     return AsyncValue.data(Setting(
       systemLanguage: systemLanguage,
+      pendingNotificationCount: pendingNotificationCount,
+    ));
+  }
+  
+  // 未处理通知数量变化的回调
+  void _onNotificationCountChanged(int count) {
+    state = state.whenData((value) => value.copyWith(
+      pendingNotificationCount: count,
     ));
   }
   
@@ -63,5 +84,16 @@ class SettingNotifier extends _$SettingNotifier {
     } catch (e) {
       state = AsyncValue.error(e, StackTrace.current);
     }
+  }
+  
+  // 取消所有通知
+  Future<void> cancelAllNotifications() async {
+    await _notificationService.cancelAllNotifications();
+  }
+  
+  // 释放资源时移除监听器
+  @override
+  void dispose() {
+    _notificationService.removeNotificationCountListener(_onNotificationCountChanged);
   }
 }

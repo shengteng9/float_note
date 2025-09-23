@@ -11,10 +11,10 @@ class AppNavigationService {
   AppNavigationService._();
 
   /// MainScreen 实例的引用
-  GlobalKey<_MainScreenState>? _mainScreenKey;
+  GlobalKey<State>? _mainScreenKey;
   
   /// 注册 MainScreen 实例
-  void registerMainScreen(GlobalKey<_MainScreenState> key) {
+  void registerMainScreen(GlobalKey<State> key) {
     _mainScreenKey = key;
   }
   
@@ -25,27 +25,27 @@ class AppNavigationService {
   
   /// 跳转到底部导航页面
   void jumpToTab(int index, {bool animate = true}) {
-    _mainScreenKey?.currentState?.jumpToPage(index, animate: animate);
+    (_mainScreenKey?.currentState as dynamic)?.jumpToPage(index, animate: animate);
   }
   
   /// 跳转到其他页面（非底部导航）
   void navigateToPage(Widget page) {
-    _mainScreenKey?.currentState?.navigateToPage(page);
+    (_mainScreenKey?.currentState as dynamic)?.navigateToPage(page);
   }
   
   /// 跳转到记录页面
   void navigateToRecords() {
-    _mainScreenKey?.currentState?.navigateToRecords();
+    (_mainScreenKey?.currentState as dynamic)?.navigateToRecords();
   }
   
   /// 跳转到登录页面
   void navigateToLogin() {
-    _mainScreenKey?.currentState?.navigateToLogin();
+    (_mainScreenKey?.currentState as dynamic)?.navigateToLogin();
   }
   
   /// 返回上一页
   bool popPage() {
-    return _mainScreenKey?.currentState?._popPage() ?? false;
+    return (_mainScreenKey?.currentState as dynamic)?._popPage() ?? false;
   }
   
   /// 快捷方法

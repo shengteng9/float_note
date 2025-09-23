@@ -5,12 +5,21 @@ import '../ui/core/providers/app_providers.dart';
 import '../ui/core/providers/auth_provider.dart';
 import '../ui/core/screens/main_screen.dart';
 import '../ui/login/widgets/login_screen.dart';
+import '../ui/core/services/notification_service.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+  
+  // 使用静态实例确保只初始化一次
+  static final NotificationService _notificationService = NotificationService();
 
   @override
   Widget build(BuildContext context) {
+    // 初始化通知服务（使用then确保不会阻塞UI构建）
+    _notificationService.initialize().then((_) {
+      print('通知服务初始化完成');
+    });
+    
     return Consumer(
       builder: (context, ref, child) {
         final language = ref.watch(languageProvider);

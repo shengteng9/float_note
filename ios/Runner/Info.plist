@@ -51,5 +51,16 @@
 	<string>需要相机权限来拍摄照片</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>需要相册权限来选择照片</string>
+	<!-- 通知相关权限 -->
+	<key>UNUserNotificationCenterDelegate</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
+	<key>UIUserNotificationSettings</key>
+	<array>
+		<string>badge</string>
+	</array>
 </dict>
 </plist>

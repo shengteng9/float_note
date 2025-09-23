@@ -6,7 +6,7 @@ import '../../home/widgets/home_screen.dart';
 import '../../home/widgets/app_bar_title.dart';
 import '../../record/widgets/record_add/add_record_button.dart';
 import '../../search/widgets/search_screen.dart';
-import '../../profile/widgets/settings_screen.dart';
+import '../../profile/widgets/profile_screen.dart';
 import '../../record/widgets/record_screen.dart';
 import '../../login/widgets/login_screen.dart';
 
